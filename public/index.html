@@ -27,7 +27,7 @@
   </div>
   <div class="architecture" role="img" aria-label="Connection architecture: your Java application uses the commercial NFS client to connect directly to NFS storage with NFSv4 and Kerberos, without an operating-system mount or native bridge.">
     <div class="diagram-heading"><span>THE DIRECT ROUTE</span><span class="tiny-dot"></span></div>
-    <div class="app-node"><span class="node-icon">{ }</span><div><small>YOUR APPLICATION</small><strong>Runs on Java.</strong></div><span class="node-tag">JVM</span></div>
+    <div class="app-node"><span class="node-icon">{ }</span><div><small>YOUR APPLICATION</small><strong>Runs on Java 17</strong></div><span class="node-tag">JVM</span></div>
     <div class="connector"><span></span><small>Application-level access</small></div>
     <div class="client-node"><div class="client-top"><span class="brand-icon">n/</span><span>nfs-client <small>Commercial Edition</small></span></div><div class="protocols"><span>NFSv4</span><span><i aria-hidden="true">◇</i> Kerberos</span></div></div>
     <div class="connector"><span></span><small>Direct connection</small></div>
@@ -47,12 +47,56 @@
 <section class="pricing-section" id="pricing"><div class="wrap section">
   <div class="pricing-heading"><p class="eyebrow">STRAIGHTFORWARD PRICING</p><h2>One license.<br><em>No usage metering.</em></h2><p>The same commercial functionality. The right license for your work.</p></div>
   <div class="plans">
-    <article class="plan"><div class="plan-top"><span class="plan-label">FOR INDEPENDENT DEVELOPERS</span><h3>Indie</h3><p>For personal projects and independent commercial development.</p></div><p class="price">$299<span>/ year</span></p><a class="button secondary" href="mailto:sales@nfs-client.dev?subject=Indie%20license%20inquiry&body=Hi%2C%20I%27m%20interested%20in%20the%20%24299%2Fyear%20Indie%20license.%0A%0AMy%20project%3A%20">Request Indie license <span aria-hidden="true">↗</span></a><ul><li>NFSv4 functionality</li><li>Kerberos support</li><li>Personal and independent commercial use</li><li>No usage metering or runtime royalties</li></ul></article>
-    <article class="plan company"><div class="plan-top"><span class="plan-label">FOR TEAMS &amp; ORGANIZATIONS</span><h3>Company</h3><p>For organizations building Java applications with NFS connectivity.</p></div><p class="price">$2,499<span>/ year</span></p><a class="button primary" href="mailto:sales@nfs-client.dev?subject=Company%20license%20inquiry&body=Hi%2C%20I%27m%20interested%20in%20the%20%242%2C499%2Fyear%20Company%20license.%0A%0ACompany%3A%20%0AUse%20case%3A%20">Request Company license <span aria-hidden="true">↗</span></a><ul><li>NFSv4 functionality</li><li>Kerberos support</li><li>Organizational use</li><li>No usage metering or runtime royalties</li></ul></article>
+    <article class="plan"><div class="plan-top"><span class="plan-label">FOR INDEPENDENT DEVELOPERS</span><h3>Indie</h3><p>For personal projects and independent commercial development.</p></div><p class="price">$299<span>/ year</span></p><a class="button secondary" href="#interest" data-license="Indie">Request Indie license <span aria-hidden="true">↗</span></a><ul><li>NFSv4 functionality</li><li>Kerberos support</li><li>Personal and independent commercial use</li><li>No usage metering or runtime royalties</li></ul></article>
+    <article class="plan company"><div class="plan-top"><span class="plan-label">FOR TEAMS &amp; ORGANIZATIONS</span><h3>Company</h3><p>For organizations building Java applications with NFS connectivity.</p></div><p class="price">$2,499<span>/ year</span></p><a class="button primary" href="#interest" data-license="Company">Request Company license <span aria-hidden="true">↗</span></a><ul><li>NFSv4 functionality</li><li>Kerberos support</li><li>Organizational use</li><li>No usage metering or runtime royalties</li></ul></article>
   </div>
   <p class="pricing-note">All licenses include NFSv4 and Kerberos. Commercial redistribution is permitted under the applicable license terms. No runtime royalties.</p>
-  <p class="purchase-note">License requests open an email to our team. We’ll discuss your use case and the applicable terms before purchase.</p>
+  <p class="purchase-note">Choose a license to tell us what you need. We’ll discuss your use case and the applicable terms before purchase.</p>
 </div></section>
+<section class="interest wrap section" id="interest" aria-labelledby="interest-title">
+  <div class="section-intro">
+    <p class="eyebrow">LET’S TALK ABOUT YOUR PROJECT</p>
+    <h2 id="interest-title">Tell us what<br>you’re building.</h2>
+    <p>Share your requirements and the license you’re considering. We’ll help you find the right fit.</p>
+    <p class="interest-contact">Already have a question? Email <a href="mailto:sales@nfs-client.dev">sales@nfs-client.dev</a>.</p>
+  </div>
+  <form class="interest-form" id="interest-form" action="mailto:sales@nfs-client.dev?subject=Commercial%20Edition%20interest" method="post" enctype="text/plain" aria-describedby="interest-note">
+    <div class="form-row">
+      <div class="form-field">
+        <label for="interest-email">Your email</label>
+        <input id="interest-email" name="email" type="email" autocomplete="email" placeholder="you@company.com" maxlength="254" required>
+      </div>
+      <div class="form-field">
+        <label for="interest-license">Intended license</label>
+        <select id="interest-license" name="license" required>
+          <option value="">Select a license</option>
+          <option value="Indie">Indie — $299/year</option>
+          <option value="Company">Company — $2,499/year</option>
+          <option value="Undecided">Not sure yet</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-field">
+      <label for="interest-features">What do you need?</label>
+      <select id="interest-features" name="features" required>
+        <option value="">Select your requirements</option>
+        <option>NFSv4 and Kerberos</option>
+        <option>NFSv4 without Kerberos</option>
+        <option>Kerberos for an existing NFS integration</option>
+        <option>Still evaluating</option>
+      </select>
+    </div>
+    <div class="form-field">
+      <label for="interest-requirements">Anything else we should know? <span>(optional)</span></label>
+      <textarea id="interest-requirements" name="requirements" rows="3" maxlength="1000" placeholder="NFS server, Java version, Kerberos setup, or your use case…"></textarea>
+    </div>
+    <button class="button primary" type="submit">Prepare email <span aria-hidden="true">↗</span></button>
+    <p class="form-note" id="interest-note">Opens a draft in your email app. Review and send it to sales@nfs-client.dev to share your interest.</p>
+    <p class="form-note" id="interest-status" role="status" aria-live="polite"></p>
+    <a class="draft-link" id="interest-draft" hidden>Open your email draft again ↗</a>
+    <noscript><p class="form-note">If your email app doesn’t open, email your details directly to <a href="mailto:sales@nfs-client.dev">sales@nfs-client.dev</a>.</p></noscript>
+  </form>
+</section>
 <section class="faq wrap section"><div><p class="eyebrow">BEFORE YOU BUILD</p><h2>A few useful answers.</h2><p>Technical questions or need support?<br><a href="mailto:support@nfs-client.dev">support@nfs-client.dev <span aria-hidden="true">↗</span></a><br>Licensing and purchases:<br><a href="mailto:sales@nfs-client.dev">sales@nfs-client.dev <span aria-hidden="true">↗</span></a></p></div><div class="questions">
 <details open><summary>How does this relate to the open-source project?</summary><p>The <a href="https://github.com/denysobukh/nfs-client-java">public Java client</a> currently documents NFSv3 support. The Commercial Edition offers NFSv4 and Kerberos under a separate commercial license.</p></details>
 <details><summary>Which license should I choose?</summary><p>Choose Indie for personal projects and independent commercial development. Choose Company for organizational use. If your situation is unclear, email us with your use case before purchasing.</p></details>
@@ -63,5 +107,54 @@
 <section class="closing wrap"><div><p class="eyebrow">JAVA TO NFS. A MORE DIRECT PATH.</p><h2>Your next integration<br>starts here.</h2></div><div><a class="button primary" href="#pricing">Find your license <span aria-hidden="true">↗</span></a><a class="closing-link" href="mailto:sales@nfs-client.dev">Questions? Talk to sales <span aria-hidden="true">↗</span></a></div></section>
 </main>
 <footer class="wrap"><a class="brand" href="https://nfs-client.dev/"><span class="brand-icon" aria-hidden="true">n/</span> nfs-client<span class="brand-java">/ java</span></a><span>Commercial Edition</span><div><a href="https://github.com/denysobukh/nfs-client-java">GitHub ↗</a><a href="mailto:support@nfs-client.dev">Support ↗</a><a href="mailto:sales@nfs-client.dev">Sales ↗</a></div></footer>
+<script>
+  const interestForm = document.getElementById('interest-form');
+  const interestEmail = document.getElementById('interest-email');
+  const interestLicense = document.getElementById('interest-license');
+  const interestDraft = document.getElementById('interest-draft');
+  const interestStatus = document.getElementById('interest-status');
+  const licenseLabels = {
+    Indie: 'Indie — $299/year',
+    Company: 'Company — $2,499/year',
+    Undecided: 'Not sure yet'
+  };
+
+  function clearInterestDraft() {
+    interestDraft.hidden = true;
+    interestDraft.removeAttribute('href');
+    interestStatus.textContent = '';
+  }
+
+  document.querySelectorAll('[data-license]').forEach((link) => {
+    link.addEventListener('click', () => {
+      interestLicense.value = link.dataset.license;
+      clearInterestDraft();
+      interestEmail.focus({ preventScroll: true });
+    });
+  });
+
+  interestForm.addEventListener('input', clearInterestDraft);
+  interestForm.addEventListener('change', clearInterestDraft);
+
+  interestForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const body = [
+      'Hi, I’m interested in the NFS Client for Java Commercial Edition.',
+      '',
+      'Email: ' + interestEmail.value.trim(),
+      'Intended license: ' + licenseLabels[interestLicense.value],
+      'NFSv4 / Kerberos requirements: ' + document.getElementById('interest-features').value,
+      'Additional details: ' + (document.getElementById('interest-requirements').value.trim() || 'None provided'),
+      '',
+      'Submitted from: https://nfs-client.dev/'
+    ].join('\r\n');
+    const subject = 'Commercial Edition interest — ' + licenseLabels[interestLicense.value];
+    const draftUrl = 'mailto:sales@nfs-client.dev?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    interestDraft.href = draftUrl;
+    interestDraft.hidden = false;
+    interestStatus.textContent = 'Your draft is ready. Nothing has been sent yet. Send it from your email app, or email your details directly to sales@nfs-client.dev if no app opens.';
+    window.location.href = draftUrl;
+  });
+</script>
 </body>
 </html>

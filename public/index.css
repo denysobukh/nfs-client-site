@@ -52,6 +52,31 @@
   .form-row { grid-template-columns: 1fr; gap: 0; }
 }
 
+/* Enterprise maintenance section */
+.maintenance {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 100px;
+  border-top: 1px solid var(--line);
+}
+.maintenance .section-intro > p { max-width: 390px; }
+.maintenance-note { color: var(--ink); font-size: 14px; margin-top: 24px; }
+.maintenance-list { list-style: none; padding: 0; margin: 0; }
+.maintenance-list li {
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.8;
+}
+.maintenance-list li:first-child { padding-top: 0; }
+.maintenance-list li:last-child { padding-bottom: 0; border-bottom: 0; }
+.maintenance-list strong { color: var(--ink); }
+@media (max-width: 1000px) { .maintenance { gap: 45px; } }
+@media (max-width: 760px) {
+  .maintenance { grid-template-columns: 1fr; gap: 30px; }
+}
+
 /* Make the commercial client's core capabilities visible at a glance. */
 .hero-features {
   display: flex;
